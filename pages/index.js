@@ -16,12 +16,14 @@ export default function App({ data }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     if (!input) return;
 
     await axios
       .get(
-        `https://api.pray.zone/v2/times/today.json?city=${input}&school=3&timeformat=1`
+        `https://api.pray.zone/v2/times/today.json?city=${input}&school=3&timeformat=1`.replace(
+          " ",
+          "-"
+        )
       )
       .then((res) => setTimes(res.data.results.datetime[0].times))
       .catch(() => alert("Invalid city."));
