@@ -2,9 +2,7 @@ import { useState } from "react";
 const axios = require("axios");
 
 export async function getServerSideProps(context) {
-  const data = await fetch(
-    "https://api.pray.zone/v2/times/today.json?city=london&school=3&timeformat=1"
-  );
+  const data = await fetch("https://api.pray.zone/v2/times/today.json?city=london&school=3&timeformat=1");
   const res = await data.json();
 
   return { props: { data: res } };
@@ -19,12 +17,8 @@ export default function App({ data }) {
     if (!input) return;
 
     await axios
-      .get(
-        `https://api.pray.zone/v2/times/today.json?city=${input}&school=3&timeformat=1`.replace(
-          " ",
-          "-"
-        )
-      )
+    .get(`https://api.pray.zone/v2/times/today.json?city=${input}&school=3&timeformat=1`
+    .replace(" ", "-"))
       .then((res) => setTimes(res.data.results.datetime[0].times))
       .catch(() => alert("Invalid city."));
   }
