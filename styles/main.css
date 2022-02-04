@@ -17,10 +17,10 @@ body {
 }
 
 input {
-  background: rgb(25, 25, 25);
+  background: none;
   font: 400 14px "Poppins";
   padding: 8px 12px;
-  border: none;
+  border: 1px solid rgb(30, 30, 30);
   color: white;
   margin-top: 100px;
   margin-bottom: 14px;
@@ -28,11 +28,12 @@ input {
 }
 
 button {
-  background: rgb(55, 255, 155);
+  background: white;
   font: 600 14px "Poppins";
   padding: 6px 12px;
   border-radius: 0 8px 8px 0;
   cursor: pointer;
+  color: black:
 }
 
 p {
@@ -46,6 +47,7 @@ p {
   margin: 6px 0;
   border-radius: 8px;
 }
+
 span {
   font-weight: 400;
   color: rgb(155, 155, 155);
